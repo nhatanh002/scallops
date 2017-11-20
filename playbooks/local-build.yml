@@ -4,7 +4,7 @@
       - ../common.vars
   tasks:
     - name: build all microservices
-      command: chdir="{{ cis_root }}/{{ item }}" bash -c "trash . && go build"
+      command: chdir="{{ cis_src }}/{{ item }}" bash -c "trash . && go build"
       #roles: 
       #  - { role: build_service, microservice: "{{ items }}" }
       with_items: "{{ microservices }}"  
