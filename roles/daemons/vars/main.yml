@@ -1,0 +1,19 @@
+---
+microservices:
+    - dolphin
+    - saba
+    - poseidon
+    - seabed
+    - seahorse
+    - tuna
+    - xevipham
+    - seaweed
+    - octopus
+    - viettel
+    - mobifone
+    - vinaphone
+    - vietnamobile
+    - taodo
+    - jellyfish
+    - whale
+cis_root: "/home/{{ ansible_user }}/go/src/cis"

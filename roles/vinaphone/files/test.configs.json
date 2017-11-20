@@ -1,0 +1,30 @@
+{
+    "Site": {
+        "Domain": "vinaphone.iparking.vn"
+    },
+    "WebServer": {
+        "BodyLimit": "1M",
+        "LogDir": "temp/logs",
+        "TempDir": "temp",
+        "Port": 18904,
+        "RPCPort": 18905,
+        "Secure": {
+            "EnableTLS": false,
+            "CertFile": "certs/adminpt-server-cert.pem",
+            "KeyFile": "certs/adminpt-server-key.pem",
+            "CORS": {
+                "AllowOrigins": [
+                    "https://vinaphone.iparking.vn"
+                ]
+            }
+        }
+    },
+    "ETCD": {
+        "Endpoints": ["localhost:2379"]
+    },
+    "Certificates": {
+        "Key": "certs/rpc_server.key",
+        "Crt": "certs/rpc_server.crt",
+        "ClientCrt": "certs/rpc_client.crt"
+    }
+}

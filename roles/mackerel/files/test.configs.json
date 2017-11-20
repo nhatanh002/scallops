@@ -1,0 +1,19 @@
+{
+    "Certificates": {
+        "Key": "certs/rpc_server.key",
+        "Crt": "certs/rpc_server.crt",
+        "ClientCrt": "certs/rpc_client.crt"
+    },
+    "Runtime": {
+        "Port": "8893",
+        "LogDir": "temp/logs",
+        "TempDir": "temp"
+    },
+    "ETCD": {
+        "Endpoints": ["localhost:2379"]
+    },
+    "Secure": {
+        "SipHashSum0": 947295729583939162,
+        "SipHashSum1": 323869573058327753
+    }
+}

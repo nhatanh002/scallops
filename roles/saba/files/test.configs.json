@@ -1,0 +1,15 @@
+{
+    "Certificates": {
+        "Key": "certs/rpc_server.key",
+        "Crt": "certs/rpc_server.crt",
+        "ClientCrt": "certs/rpc_client.crt"
+    },
+    "Runtime": {
+        "Port": "8891",
+        "LogDir": "temp/logs",
+	    "TempDir": "temp"
+    },
+    "ETCD": {
+        "Endpoints": ["localhost:2379"]
+    }
+}

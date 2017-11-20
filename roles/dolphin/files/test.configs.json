@@ -1,0 +1,25 @@
+{
+    "Certificates": {
+        "Key": "certs/rpc_server.key",
+        "Crt": "certs/rpc_server.crt",
+        "ClientCrt": "certs/rpc_client.crt"
+    },
+    "Runtime": {
+        "Port": "8890"
+    },
+    "Database": {
+        "Type": "mysql",
+        "DB": "cis_master",
+        "Username": "root",
+        "Password": "123",
+        "Args": "charset=utf8&collation=utf8_general_ci&parseTime=true&loc=Asia%2FHo_Chi_Minh",
+        "Master": [
+            "127.0.0.1:3306"
+        ],
+        "Slaves": [
+            "127.0.0.1:3306"
+        ],
+        "MaxIdleConn": 30,
+        "MaxOpenConn": 100
+    }
+}

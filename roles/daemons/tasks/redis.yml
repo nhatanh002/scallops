@@ -1,0 +1,7 @@
+- name: install redis if not already exists
+  become: yes
+  apt: name=redis-server state=present
+
+- name: start redis
+  become: yes
+  service: name=redis state=started

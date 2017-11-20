@@ -1,0 +1,43 @@
+{
+    "Site": {
+        "Domain": "xevipham.vn"
+    },
+
+    "WebServer": {
+        "BodyLimit": "1M",
+        "LogDir": "temp/logs",
+        "TempDir": "temp",
+        "Port": 8900,
+        "Secure": {
+            "EnableTLS": false,
+            "CertFile": "certs/adminpt-server-cert.pem",
+            "KeyFile": "certs/adminpt-server-key.pem",
+            "CORS": {
+                "AllowOrigins": [
+                    "https://xevipham.vn",
+                    "http://xevipham.vn"
+                ]
+            },
+            "SipHashSum0": 947295729583939162,
+            "SipHashSum1": 323869573058327753
+        }
+    },
+
+    "Certificates": {
+        "Key": "certs/rpc_server.key",
+        "Crt": "certs/rpc_server.crt",
+        "ClientCrt": "certs/rpc_client.crt"
+    },
+
+    "Runtime": {
+        "Port": "8891",
+        "LogDir": "temp/logs",
+	    "TempDir": "temp"
+
+    },
+    "ETCD": {
+        "Endpoints": [
+            "localhost:2379"
+        ]
+    }
+}

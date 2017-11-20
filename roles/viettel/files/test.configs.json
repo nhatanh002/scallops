@@ -1,0 +1,30 @@
+{
+    "Site": {
+        "Domain": "viettel.iparking.vn"
+    },
+    "WebServer": {
+        "BodyLimit": "1M",
+        "LogDir": "temp/logs",
+        "TempDir": "temp",
+        "Port": 9896,
+        "RPCPort": 8896,
+        "Secure": {
+            "EnableTLS": false,
+            "CertFile": "certs/adminpt-server-cert.pem",
+            "KeyFile": "certs/adminpt-server-key.pem",
+            "CORS": {
+                "AllowOrigins": [
+                    "https://viettel.iparking.vn"
+                ]
+            }
+        }
+    },
+    "ETCD": {
+        "Endpoints": ["localhost:2379"]
+    },
+    "Certificates": {
+        "Key": "certs/rpc_server.key",
+        "Crt": "certs/rpc_server.crt",
+        "ClientCrt": "certs/rpc_client.crt"
+    }
+}

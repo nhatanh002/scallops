@@ -1,0 +1,4 @@
+---
+# tasks file for daemons
+- import_tasks: redis.yml
+- import_tasks: supervisor.yml

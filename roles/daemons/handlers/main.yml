@@ -1,0 +1,5 @@
+---
+# handlers file for daemons
+- name: restart supervisor
+  become: yes
+  service: name=supervisor state=restarted

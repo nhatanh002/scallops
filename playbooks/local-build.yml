@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  vars_files:
+      - ../common.vars
+  tasks:
+    - name: build all microservices
+      command: chdir="{{ cis_root }}/{{ item }}" bash -c "trash . && go build"
+      #roles: 
+      #  - { role: build_service, microservice: "{{ items }}" }
+      with_items: "{{ microservices }}"  

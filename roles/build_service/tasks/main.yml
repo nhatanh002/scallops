@@ -1,0 +1,4 @@
+---
+- name: build all microservices
+  command: chdir={{ cis_root }}/{{ microservice }} bash -c "trash . && go build"
+    

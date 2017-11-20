@@ -1,0 +1,4 @@
+---
+# defaults for {{ microservice }}
+cis_root: /home/{{ ansible_user }}/src/cis
+microservice: vinaphone

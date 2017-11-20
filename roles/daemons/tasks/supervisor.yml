@@ -1,0 +1,8 @@
+- name: install supervisor if not already exists
+  become: yes
+  apt: name=supervisor state=present
+
+- name: prepare supervisor's configuration
+  become: yes
+  template: src=supervisord.conf dest=/etc/supervisor/supervisord.conf
+  notify: restart supervisor

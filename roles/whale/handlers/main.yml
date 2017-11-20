@@ -1,0 +1,9 @@
+---
+# handlers file for dolphin
+- name: push binary
+  copy: src="~/go/src/cis/{{ microservice }}/{{ microservice }}"  dest="{{ cis_root }}/{{ microservice }}/{{ microservice }}"
+  # notify: start service
+
+- name: start service  
+  become: yes
+  command: "supervisorctl start {{ microservice }}"
