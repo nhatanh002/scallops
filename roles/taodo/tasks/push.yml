@@ -21,6 +21,14 @@
 - name: stop service
   become: yes
   command: "supervisorctl stop {{ microservice }}"
-  notify: 
-    - push binary
-    - start service  
+  register: stop_res
+
+- name: push binary
+  copy: src="~/go/src/cis/{{ microservice }}/{{ microservice }}"  dest="{{ cis_root }}/{{ microservice }}/{{ microservice }}" mode='0755'
+  register: push_res
+  when: stop_res.failed == false
+    
+- name: start service  
+  become: yes
+  command: "supervisorctl start {{ microservice }}"
+  when: push_res.failed == false
