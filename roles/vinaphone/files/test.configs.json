@@ -6,8 +6,8 @@
         "BodyLimit": "1M",
         "LogDir": "temp/logs",
         "TempDir": "temp",
-        "Port": 18904,
-        "RPCPort": 18905,
+        "Port": 8904,
+        "RPCPort": 8905,
         "Secure": {
             "EnableTLS": false,
             "CertFile": "certs/adminpt-server-cert.pem",

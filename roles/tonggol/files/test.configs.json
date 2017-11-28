@@ -5,7 +5,7 @@
         "ClientCrt": "certs/rpc_client.crt"
     },
     "Runtime": {
-        "Port": "8888",
+        "Port": "8886",
         "LogDir": "temp/logs",
 	    "TempDir": "temp"
     },

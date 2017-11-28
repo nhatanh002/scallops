@@ -6,7 +6,7 @@
         "BodyLimit": "1M",
         "LogDir": "temp/logs",
         "TempDir": "temp",
-        "Port": 8801,
+        "Port": 8800,
         "Secure": {
             "EnableTLS": false,
             "CertFile": "certs/adminpt-server-cert.pem",
