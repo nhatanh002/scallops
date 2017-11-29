@@ -1,6 +1,6 @@
 {
     "Site": {
-        "Domain": "api.iparking.vn"
+        "Domain": "napas.upark.vn"
     },
     "WebServer": {
         "BodyLimit": "1M",
@@ -13,10 +13,8 @@
             "KeyFile": "certs/adminpt-server-key.pem",
             "CORS": {
                 "AllowOrigins": [
-                    "https://m.iparking.vn",
-                    "https://w.iparking.vn",
-                    "http://mtest.iparking.vn",
-                    "http://wtest.iparking.vn"
+                    "https://napas.upark.vn",
+                    "http://napas.upark.vn"
                 ]
             },
             "SipHash0": 923852682936263,
