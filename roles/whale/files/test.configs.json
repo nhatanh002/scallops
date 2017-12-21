@@ -1,6 +1,6 @@
 {
     "Site": {
-        "Domain": "api.iparking.vn"
+        "Domain": "api.upark.vn"
     },
     "WebServer": {
         "BodyLimit": "1M",
