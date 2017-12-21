@@ -1,0 +1,11 @@
+---
+- hosts: kube-master
+  vars_files: 
+    - ../common.vars
+  tasks:
+      - name: Dockerizing microservices
+        with_items: "{{ microservices }}"
+        include_role:
+            name: dockerizer
+        vars:
+            microservice: "{{ item }}"

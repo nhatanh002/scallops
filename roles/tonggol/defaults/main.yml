@@ -1,5 +1,0 @@
----
-# defaults for {{ microservice }}
-cis_root: /home/{{ ansible_user }}/src/cis
-cis_src: ../../..
-microservice: tonggol

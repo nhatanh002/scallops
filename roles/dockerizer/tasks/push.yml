@@ -1,0 +1,52 @@
+#- name: pushing supervisor's conf
+#  become: yes
+#  template: src="{{ microservice }}.conf" dest="/etc/supervisor/conf.d/{{ microservice }}.conf"
+#
+#- name: supervisor reread
+#  become: yes
+#  command: "supervisorctl reread"
+#
+- name: pushing configs.json
+  copy: src="{{ cis_src }}/{{ microservice }}/configs.json" dest="{{ cis_root }}/{{ microservice }}/configs.json"
+  when: "inventory_hostname != 'test-server'"
+
+- name: pushing test.configs.json
+  copy: src={{ microservice }}.configs.json dest="{{ cis_root }}/{{ microservice }}/configs.json"
+  when: "inventory_hostname == 'test-server'"
+
+- name: pushing test.configs.json
+  copy: src={{ microservice }}.configs.json dest="{{ cis_root }}/{{ microservice }}/configs.json"
+  when: "inventory_hostname == 'kube-master'"
+
+- name: pushing certs
+  copy: src="{{ cis_src }}/scallops/certs" dest="{{ cis_root }}/{{ microservice }}/"
+
+# begin to push binary
+#- name: stop service
+#  become: yes
+#  command: "supervisorctl stop {{ microservice }}"
+#  register: stop_res
+
+- name: push binary
+  copy: src="{{ cis_src }}/{{ microservice }}/{{ microservice }}"  dest="{{ cis_root }}/{{ microservice }}/{{ microservice }}" mode='0755'
+  register: push_res
+  #when: stop_res.failed == false
+
+- name: push Whale's listbank
+  copy: src="{{ cis_src }}/whale/listbank.json"  dest="{{ cis_root }}/whale/listbank.json"
+  when: "microservice  == 'whale'"
+    
+- name: push dolphin's zoneinfo.zip
+  copy: src="/usr/local/go/lib/time/zoneinfo.zip"  dest="{{ cis_root }}/dolphin/zoneinfo.zip"
+  when: "microservice  == 'dolphin'"
+    
+- name: pushing Dockerfile
+  copy: src="{{ cis_src }}/{{ microservice }}/Dockerfile" dest="{{ cis_root }}/{{ microservice }}/Dockerfile"
+  when: "inventory_hostname == 'kube-master'"
+
+- name: dockerize service  
+  command: chdir="{{ cis_root}}/{{ microservice }}" bash -c "docker build -t {{ microservice }} ./"
+  #- name: start service  
+  #  become: yes
+  #  command: "supervisorctl start {{ microservice }}"
+  #  when: push_res.failed == false

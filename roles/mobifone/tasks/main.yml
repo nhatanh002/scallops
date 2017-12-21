@@ -1,5 +1,0 @@
----
-# tasks file for dolphin
-#- import_tasks: build.yml
-- import_tasks: mkdir.yml
-- import_tasks: push.yml

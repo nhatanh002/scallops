@@ -1,0 +1,47 @@
+{
+    "Site": {
+        "Domain": "api.upark.vn"
+    },
+    "WebServer": {
+        "BodyLimit": "1M",
+        "LogDir": "temp/logs",
+        "TempDir": "temp",
+        "Port": 8889,
+        "Secure": {
+            "EnableTLS": false,
+            "CertFile": "certs/adminpt-server-cert.pem",
+            "KeyFile": "certs/adminpt-server-key.pem",
+            "SecureCookie": {
+                "CookieName": "auth",
+                "ContextKey": "iparking_uid",
+                "MaxAge": 0,
+                "ExpireInMinute": 259200,
+                "HashKey": "Wpdhgkwkpwngapoge93nx9sj2lsigwnx9529xn#px02naigm2-1$93*7nwlwsddf",
+                "BlockKey": "DSgjo23058nxg84ns592*383nboiwkg+"
+            },
+            "JWT_WAP": {
+                "ContextKey": "iparking_ctx_key",
+                "SecretKey": "ffip1YUu786kwaqnhN2lBwKYvEos6s56MhGF9vVXk",
+                "ExpireInMinute": 259200
+            },
+            "JWT_NAP": {
+                "ContextKey": "iparking_ctx_key",
+                "SecretKey": "Wsjfi^sgjlkajskgwmsmvlk!utwEpc03q<qoP6[%4",
+                "ExpireInMinute": 259200
+            },
+            "CORS": {
+                "AllowOrigins": [
+                    "https://m.iparking.vn",
+                    "https://w.iparking.vn",
+                    "http://mtest.iparking.vn",
+                    "http://wtest.iparking.vn"
+                ]
+            },
+            "SipHashSum0": 947295729583939162,
+            "SipHashSum1": 323869573058327753
+        }
+    },
+    "ETCD": {
+        "Endpoints": ["172.31.16.61:2379"]
+    }
+}

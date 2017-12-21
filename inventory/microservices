@@ -1,0 +1,93 @@
+[dolphin]
+dolphin ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[dolphin:vars]
+
+[saba]
+saba ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[saba:vars]
+
+[poseidon]
+poseidon ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[poseidon:vars]
+
+[seabed]
+seabed ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[seabed:vars]
+
+[seahorse]
+seahorse ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[seahorse:vars]
+
+[tuna]
+tuna ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[tonggol]
+tonggol ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[tonggol:vars]
+
+[seaweed]
+seaweed ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[seaweed:vars]
+
+[octopus]
+octopus ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[octopus:vars]
+
+[mackerel]
+mackerel ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[mackerel:vars]
+
+[taodo]
+taodo ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[taodo:vars]
+
+[mobifone]
+mobifone ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[mobifone:vars]
+
+[vietnamobile]
+vietnamobile ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[vietnamobile:vars]
+
+[viettel]
+viettel ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[viettel:vars]
+
+[vinaphone]
+vinaphone ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[vinaphone:vars]
+
+[xevipham]
+xevipham ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[xevipham:vars]
+
+[napas]
+napas ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[napas:vars]
+
+[whale]
+whale ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[whale:vars]
+
+[jellyfish]
+jellyfish ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
+
+[jellyfish:vars]
+

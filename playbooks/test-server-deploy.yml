@@ -1,0 +1,14 @@
+---
+- hosts: test-server
+  vars_files:
+      - ../common.vars
+  tasks:
+      - name: Preparing daemons
+        include_role:
+            name: daemons
+      - name: Deploying microservices
+        with_items: "{{ microservices }}"
+        include_role:
+            name: binary-deployer
+        vars:
+            microservice: "{{ item }}"

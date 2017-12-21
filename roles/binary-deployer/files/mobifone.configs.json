@@ -1,0 +1,30 @@
+{
+    "Site": {
+        "Domain": "mobifone.iparking.vn"
+    },
+    "WebServer": {
+        "BodyLimit": "1M",
+        "LogDir": "temp/logs",
+        "TempDir": "temp",
+        "Port": 8902,
+        "RPCPort": 8903,
+        "Secure": {
+            "EnableTLS": false,
+            "CertFile": "certs/adminpt-server-cert.pem",
+            "KeyFile": "certs/adminpt-server-key.pem",
+            "CORS": {
+                "AllowOrigins": [
+                    "https://mobifone.iparking.vn"
+                ]
+            }
+        }
+    },
+    "ETCD": {
+        "Endpoints": ["172.31.16.61:2379"]
+    },
+    "Certificates": {
+        "Key": "certs/rpc_server.key",
+        "Crt": "certs/rpc_server.crt",
+        "ClientCrt": "certs/rpc_client.crt"
+    }
+}

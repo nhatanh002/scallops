@@ -1,2 +1,0 @@
-- name: build local binary
-  command: chdir="~/go/src/cis/{{ microservice }}" bash -c "~/go/bin/trash . && echo $PATH && go build" 

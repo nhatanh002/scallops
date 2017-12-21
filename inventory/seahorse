@@ -1,4 +1,0 @@
-[seahorse]
-seahorse ansible_ssh_host=54.169.16.186 ansible_ssh_user=ubuntu
-
-[seahorse:vars]

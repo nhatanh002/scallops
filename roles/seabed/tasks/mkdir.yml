@@ -1,2 +1,0 @@
-- name: mkdir at remote
-  file: path="{{ cis_root }}/{{ microservice }}" state=directory

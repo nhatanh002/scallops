@@ -1,0 +1,15 @@
+{
+    "Runtime": {
+        "LogDir": "temp/logs",
+        "TempDir": "temp",
+        "Port": 8966
+    },
+    "ETCD": {
+        "Endpoints": ["172.31.16.61:2379"]
+    },
+    "Certificates": {
+        "Key": "certs/rpc_server.key",
+        "Crt": "certs/rpc_server.crt",
+        "ClientCrt": "certs/rpc_client.crt"
+    }
+}
