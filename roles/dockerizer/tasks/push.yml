@@ -1,36 +1,17 @@
-#- name: pushing supervisor's conf
-#  become: yes
-#  template: src="{{ microservice }}.conf" dest="/etc/supervisor/conf.d/{{ microservice }}.conf"
-#
-#- name: supervisor reread
-#  become: yes
-#  command: "supervisorctl reread"
-#
 - name: pushing configs.json
   copy: src="{{ cis_src }}/{{ microservice }}/configs.json" dest="{{ cis_root }}/{{ microservice }}/configs.json"
-  when: "inventory_hostname != 'test-server'"
+  when: "inventory_hostname == 'production-server'"
 
-- name: pushing test.configs.json
-  copy: src={{ microservice }}.configs.json dest="{{ cis_root }}/{{ microservice }}/configs.json"
-  when: "inventory_hostname == 'test-server'"
-
-- name: pushing test.configs.json
+- name: pushing microservice.configs.json
   copy: src={{ microservice }}.configs.json dest="{{ cis_root }}/{{ microservice }}/configs.json"
   when: "inventory_hostname == 'kube-master'"
 
 - name: pushing certs
   command: chdir="{{ cis_root }}" bash -c "cp -r .certs {{ microservice }}/certs"
 
-# begin to push binary
-#- name: stop service
-#  become: yes
-#  command: "supervisorctl stop {{ microservice }}"
-#  register: stop_res
-
 - name: push binary
   copy: src="{{ cis_src }}/{{ microservice }}/{{ microservice }}"  dest="{{ cis_root }}/{{ microservice }}/{{ microservice }}" mode='0755'
   register: push_res
-  #when: stop_res.failed == false
 
 - name: push Whale's listbank
   copy: src="{{ cis_src }}/whale/listbank.json"  dest="{{ cis_root }}/whale/listbank.json"
@@ -46,7 +27,3 @@
 
 - name: dockerize service  
   command: chdir="{{ cis_root}}/{{ microservice }}" bash -c "docker build -t {{ microservice }} ./"
-  #- name: start service  
-  #  become: yes
-  #  command: "supervisorctl start {{ microservice }}"
-  #  when: push_res.failed == false

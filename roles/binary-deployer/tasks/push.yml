@@ -8,7 +8,7 @@
 
 - name: pushing configs.json
   copy: src="{{ cis_src }}/{{ microservice }}/configs.json" dest="{{ cis_root }}/{{ microservice }}/configs.json"
-  when: "inventory_hostname != 'test-server'"
+  when: "inventory_hostname == 'production-server'"
 
 - name: pushing test.configs.json
   copy: src={{ microservice }}.configs.json dest="{{ cis_root }}/{{ microservice }}/configs.json"

@@ -1,7 +1,7 @@
 ---
 # tasks file for dolphin
 #- import_tasks: build.yml
-- debug: 
+- debug:
     msg: "========Deploying {{ microservice }}========"
 - import_tasks: mkdir.yml
 - import_tasks: push.yml
