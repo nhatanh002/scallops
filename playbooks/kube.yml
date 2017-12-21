@@ -3,6 +3,8 @@
   vars_files: 
     - ../common.vars
   tasks:
+      - name: Pushing certs
+        copy: src=../certs/ dest="/home/{{ ansible_user }}/go/src/cis/.certs"
       - name: Dockerizing microservices
         with_items: "{{ microservices }}"
         include_role:

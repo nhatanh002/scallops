@@ -6,6 +6,8 @@
       - name: Preparing daemons
         include_role:
             name: daemons
+      - name: Pushing certs
+        copy: src=../certs/ dest="/home/{{ ansible_user }}/go/src/cis/.certs"
       - name: Deploying microservices
         with_items: "{{ microservices }}"
         include_role:

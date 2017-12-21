@@ -19,7 +19,7 @@
   when: "inventory_hostname == 'kube-master'"
 
 - name: pushing certs
-  copy: src="{{ cis_src }}/scallops/certs" dest="{{ cis_root }}/{{ microservice }}/"
+  command: chdir="{{ cis_root }}" bash -c "cp -r .certs {{ microservice }}/certs"
 
 # begin to push binary
 #- name: stop service
